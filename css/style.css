@@ -7,9 +7,9 @@
     list-style: none;
     text-decoration: none;
     font-family: "poppins", sans-serif;
-    scroll-behavior:smooth ;
+    scroll-behavior: smooth;
 }
-:root{
+:root {
     --main-color: #033a80;
     --bg-color: #fff;
     --text-color:#0f0c27;
@@ -19,6 +19,15 @@
     --medium-font: 1.8rem;
     --p-font: 0.941 rem;
 }
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 body {
     background: var(--bg-color);
     color: var(--text-color);
@@ -26,20 +35,20 @@ body {
 
 /* for darkmode */
 
-body.active{
+body.active {
     --text-color: #fff;
     --bg-color: #0f0c27;
 }
 section {
     padding: 50px 10%;
 }
-*::selection{
+*::selection {
     color: var(--bg-color);
     background-color: var(--main-color);
 }
 /* =========================== Navigation Bar =======================*/
 
-header{
+header {
     position: fixed;
     width: 100%;
     top: 0;
@@ -54,33 +63,35 @@ header{
     box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
 }
 
-.logo{
+.logo {
     font-size: 1.61rem;
     font-weight: 600;
     color: var(--text-color);
 }
-.navbar{
+.logo:hover {
+color: var(--hover)
+}
+.navbar {
     display: flex;
 }
 
-.navbar a{
+.navbar a {
     font-size: 1rem;
     padding: 10px 20px;
     color: var(--text-color);
     font-weight: 500;
 }
-.navbar a:hover{
+.navbar a:hover {
     color: var(--hover);
-
 }
 
-#menu-icon{
+#menu-icon {
     font-size: 24px;
     cursor: pointer;
     z-index: 10001;
     display: none;
 }
-#darkmode{
+#darkmode {
     font-size: 22px;
     cursor: pointer;
 }
@@ -93,38 +104,44 @@ header{
     grid-template-columns: 0.2fr 1fr 1fr;
     align-items: center;
     gap: 1rem;
+    opacity: 1;
+    transition: 1s;
+    animation: show 1s;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
 }
+
 .home-img {
     order: 3;
 }
-.home-img img{
+.home-img img {
 width: 100%;
 border-radius: 1rem;
 }
-.home-text span{
+.home-text span {
     font-size: var(--medium-font);
     font-weight: 500;
 }
-.home-text h1{
+.home-text h1 {
 font-size: 1.1rem;
 font-weight: 400;
 }
-.home-text p{
+.home-text p {
     font-size: var(--p-font);
     font-weight: 400;
     margin: 0.7rem 0 1rem;
 }
-.social{
+.social {
     display: flex;
     flex-direction: column;
 }
-.social a{
+.social a {
     margin-bottom: 1rem;
     font-size: 22px;
     color: var(--text-color);
 }
 /* hover */
-.social a:hover{
+.social a:hover {
     color: var(--hover);
 }
 /* button */
@@ -135,7 +152,7 @@ font-weight: 400;
     padding: 0.7rem 1.3rem;
     border-radius: 0.5rem;
 }
-.btn:hover{
+.btn:hover {
     background: var(--hover);
 }
 /* ================ About Section ================== */
@@ -143,31 +160,36 @@ font-weight: 400;
 .heading {
     text-align: center;
 }
-.heading h2{
+.heading h2 {
     font-size: 30px;
 }
-.heading span{
+.heading span {
     font-size: var(--p-font);
     color: rgb(2,166,70);
 }
-.about-container{
+.about-container {
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 2rem;
 }
-.about-img img{
+.about-img img {
 width: 80%;
 border-radius: 1rem;
 }
 
-.about-text p{
+.about-text p {
 font-size: var(--p-font);
 font-weight: 400;
 text-align: justify;
 }
+
 .information {
 margin: 1rem 0 1.4rem;
+}
+
+.span-info {
+padding-left: 5px;
 }
 
 .information .info-box{
@@ -181,7 +203,7 @@ margin: 1rem 0 1.4rem;
 }
 
 .information .info-span span{
-    font-weight:400;
+    font-weight: 400;
     margin-left: 1rem;
 }
 
@@ -194,12 +216,15 @@ margin: 1rem 0 1.4rem;
     gap: 2rem;
     margin-top: 4rem;
 }
+.skills {
+    border-radius: 1rem;
+}
 
-.skills-img img{
+.skills-img img {
     width: 80%;
     padding-left: 4rem;
     object-position: center;
-   
+    border-radius: 1rem;
 }
 
 .bars-box {
@@ -236,33 +261,33 @@ margin: 1rem 0 1.4rem;
     border-radius: 0.5rem;
 }
 
-.java-bar{
+.java-bar {
     width: 90%;
 }
 
 .css-bar {
     width: 80%;
 }
-.html-bar{
+.html-bar {
     width: 95%;
 }
 
-.sql-bar{
+.sql-bar {
     width: 85%;
 }
 
-.git-bar{
+.git-bar {
     width: 90%;
 }
-.spring-bar{
+.spring-bar {
     width: 30%;
 }
 
-.linux-bar{
+.linux-bar {
     width: 40%;
 }
 
-.git-bar{
+.git-bar {
     width: 90%;
 }
 
@@ -320,7 +345,7 @@ form textarea{
     height: 200px;
 }
 
-.contact-button{
+.contact-button {
     width: 160px;
     cursor: pointer;
     background: #2768d9;
@@ -331,7 +356,7 @@ form textarea{
     margin-left: 35%;
 }
 
-.contact-button:hover{
+.contact-button:hover {
     background: var(--hover);
 }
 
